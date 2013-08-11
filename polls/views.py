@@ -9,7 +9,7 @@ from polls.models import Poll, Choice
 def index(request):
   latest_poll_list = Poll.objects.order_by('pub_date')[:5]
   template = loader.get_template('polls/index.html')
-  content = RequestContext(request, {
+  context = RequestContext(request, {
         'latest_poll_list': latest_poll_list,
     })
   return HttpResponse(template.render(context))
