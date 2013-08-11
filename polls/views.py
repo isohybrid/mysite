@@ -14,7 +14,7 @@ class IndexView(generic.ListView):
 
   def get_queryset(self):
     """Return the last five pulished polls."""
-    return Polls.objects.order_by('-pub_date')[:5]
+    return Poll.objects.order_by('-pub_date')[:5]
 
 class DetailView(generic.DetailView):
   model = Poll
