@@ -16,4 +16,5 @@ urlpatterns = patterns('',
     url(r'^blog/', include('blog.urls')),
     url(r'^polls/', include('polls.urls', namespace="polls")),
     url(r'^admin/', include(admin.site.urls)),
+    #url(r'', include('django.contrib.flatpages.urls')),
 )
