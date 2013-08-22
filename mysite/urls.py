@@ -20,5 +20,6 @@ urlpatterns = patterns('',
     url(r'^tiny_mce/(?P<path>.*)$', 'django.views.static.serve',
                                       { 'document_root': '/data/site/tinymce/js/tinymce' },
        ),
+    url(r'^search/$', 'mysite.search.views.search'),
    # url(r'', include('django.contrib.flatpages.urls')),
 )
