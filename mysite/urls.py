@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.conf.urls.defaults import *
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -16,5 +17,8 @@ urlpatterns = patterns('',
     url(r'^blog/', include('blog.urls')),
     url(r'^polls/', include('polls.urls', namespace="polls")),
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'', include('django.contrib.flatpages.urls')),
+    url(r'^tiny_mce/(?P<path>.*)$', 'django.views.static.serve',
+                                      { 'document_root': '/data/site/tinymce/js/tinymce' },
+       ),
+   # url(r'', include('django.contrib.flatpages.urls')),
 )
