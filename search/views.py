@@ -12,9 +12,12 @@ def search(request):
   # context = Context({ 'query': query, 'results': results })
   # response = template.render(context)
   # return HttpResponse(response)
-  results = []
+  keyword_results = results = []
   if query:
+    keyword_results = FlatPage.objects.filter(
+        searchkeyword_keyword_in=query.split()).dsitinct()
     results= FlatPage.objects.filter(content__icontains=query)
   return render_to_response('search/search.html',
       { 'query': query,
+        'keyword_results': keyword_results,
         'results': results })
