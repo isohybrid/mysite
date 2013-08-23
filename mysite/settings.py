@@ -134,7 +134,8 @@ INSTALLED_APPS = (
     'polls',
     'models',
     'blog',
-    'search',
+    # 'search',
+    'coltrane',
 )
 
 # A sample logging configuration. The only tangible logging
