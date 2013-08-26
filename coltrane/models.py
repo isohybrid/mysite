@@ -15,3 +15,9 @@ class Category(models.Model):
 
   def __unicode__(self):
     return self.title
+
+class Entry(models.Model):
+  title = models.CharField(max_length=250)
+  excerpt = models.TextField(blank=True)
+  body = models.TextField()
+  pub_date = models.DateTimeField()
