@@ -112,7 +112,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 TEMPLATE_DIRS = (
     # TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
-    "/data/site/mysite/templates",
+    "/data/github/mysite/templates",
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -170,6 +170,6 @@ LOGGING = {
     }
 }
 
-RECAPTCHA_PUBLIC_KEY = '76wtgdfsjhsydt7r5FFGFhgsdfytd656sad75fgh'
-RECAPTCHA_PRIVATE_KEY = '98dfg6df7g56df6gdfgdfg65JHJH656565GFGFGs'
+RECAPTCHA_PUBLIC_KEY = '6Lcc4eoSAAAAANM3lDhGEqz9ek5bJOphkvkg1K9N'
+RECAPTCHA_PRIVATE_KEY = '6Lcc4eoSAAAAAK2tU4_n4E0CzJmZzK4Iynw6fPrK'
 RECAPTCHA_USE_SSL = True
