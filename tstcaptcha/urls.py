@@ -5,7 +5,7 @@ from tstcaptcha.forms import RecaptchaRegistrationForm
 
 urlpatterns = patterns('',
     url(r'register/$', register,
-      {'form_class': RecaptchaRegistrationForm},
+      {'form_class': RecaptchaRegistrationForm, 'backend': 'registration.backends.default.DefaultBackend'},
       name='registration.views.register'),
     (r'^$', include('registration.urls')),
 )
