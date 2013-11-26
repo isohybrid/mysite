@@ -2,8 +2,11 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.defaults import *
 
 # Uncomment the next two lines to enable the admin:
-from django.contrib import admin
-admin.autodiscover()
+#from django.contrib import admin
+#admin.autodiscover()
+
+from tstcaptcha.forms import RecaptchaRegistrationForm
+from registration.views import register
 
 urlpatterns = patterns('',
     # Examples:
@@ -14,13 +17,18 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^weblog/$', 'coltrane.views.entries_index'),
-    url(r'^blog/', include('blog.urls')),
-    url(r'^polls/', include('polls.urls', namespace="polls")),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^tiny_mce/(?P<path>.*)$', 'django.views.static.serve',
-                                      { 'document_root': '/data/site/tinymce/js/tinymce' },
-       ),
+    ##url(r'^weblog/$', 'coltrane.views.entries_index'),
+    ##url(r'^blog/', include('blog.urls')),
+    ##url(r'^polls/', include('polls.urls', namespace="polls")),
+    ##url(r'^admin/', include(admin.site.urls)),
+    ##url(r'^tiny_mce/(?P<path>.*)$', 'django.views.static.serve',
+    ##                                  { 'document_root': '/data/site/tinymce/js/tinymce' },
+    ##   ),
     # url(r'^search/$', 'mysite.search.views.search'),
-    url(r'', include('django.contrib.flatpages.urls')),
+    ##url(r'', include('django.contrib.flatpages.urls')),
+    ##url(r'^$', include('tstcaptcha.urls'),
+    url(r'^register/$', register,
+      {'form_class': RecaptchaRegistrationForm},
+      name='registration.views.register'),
+    (r'', include('registration.urls')),
 )

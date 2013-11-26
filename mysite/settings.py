@@ -138,7 +138,7 @@ INSTALLED_APPS = (
     # 'coltrane',
     'captcha',
     'registration',
-    'recaptcha',
+    'tstcaptcha',
 )
 
 # A sample logging configuration. The only tangible logging
